@@ -9,6 +9,7 @@ namespace Terminal
         private static Command[] commands = new[]
         {
             new Command("help", "Shows this command", Help),
+            new Command("clear", "Clears the console", Clear),
             new Command("exit", "Quits the command line", Exit)
         };
         
@@ -18,6 +19,11 @@ namespace Terminal
             {
                 Console.WriteLine($"{cmd.name} - {cmd.description}");
             }
+        }
+
+        private static void Clear()
+        {
+            Console.Clear();
         }
         
         private static void Exit()
